@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eshban Bahadur | Fixes & AI Automation</title>
+<meta name="description" content="Hacked WordPress site, WooCommerce bug, a Lovable, Bolt or Replit app that won't work, or work you want to automate with AI? Senior software engineer with 20+ years of experience. Order safely through Fiverr.">
+<meta property="og:title" content="Eshban Bahadur | Fixes & AI Automation">
+<meta property="og:description" content="I fix hacked WordPress sites, WooCommerce bugs and broken Lovable, Bolt and Replit apps, and build AI agents and n8n automations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F4F6;
+    --ink: #17202E;
+    --slate: #556172;
+    --line: #D3D9E1;
+    --broken: #C2362B;
+    --broken-soft: #FBE9E7;
+    --fixed: #17805A;
+    --fixed-soft: #E3F3EC;
+    --card: #FFFFFF;
+    --focus: #2F6BD8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #141A23;
+      --ink: #EEF1F5;
+      --slate: #A3AEBD;
+      --line: #2D3746;
+      --broken: #F07368;
+      --broken-soft: #3A1F1E;
+      --fixed: #4CC898;
+      --fixed-soft: #16332A;
+      --card: #1B2330;
+      --focus: #7FA8F5;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #141A23; --ink: #EEF1F5; --slate: #A3AEBD; --line: #2D3746;
+    --broken: #F07368; --broken-soft: #3A1F1E; --fixed: #4CC898; --fixed-soft: #16332A;
+    --card: #1B2330; --focus: #7FA8F5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1rem; }
+  @media (min-width: 48rem) { .wrap { padding: 0 2rem; } }
+
+  /* Header */
+  .top {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 1.25rem 0;
+  }
+  .name {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700; font-size: 1.125rem; text-decoration: none;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 2.75rem; padding: 0.6rem 1.15rem;
+    border-radius: 999px; font-weight: 700; text-decoration: none;
+    background: var(--ink); color: var(--paper);
+    border: 2px solid var(--ink);
+    white-space: nowrap;
+  }
+  .btn:hover { background: transparent; color: var(--ink); }
+  .btn-quiet { background: transparent; color: var(--ink); }
+  .btn-quiet:hover { background: var(--ink); color: var(--paper); }
+
+  /* Hero */
+  .hero { padding: 3rem 0 2rem; }
+  @media (min-width: 48rem) { .hero { padding: 5rem 0 2.5rem; } }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 8vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin: 0;
+    max-width: 13ch;
+  }
+  h1 .was {
+    display: block;
+    color: var(--broken);
+    text-decoration: line-through;
+    text-decoration-thickness: 0.08em;
+    text-decoration-color: var(--ink);
+  }
+  h1 .now { display: block; color: var(--fixed); }
+  .lede {
+    margin: 1.5rem 0 0;
+    font-size: 1.2rem;
+    max-width: 38rem;
+    color: var(--slate);
+  }
+  .lede strong { color: var(--ink); }
+
+  /* Triage */
+  .triage { padding: 2rem 0 4rem; }
+  h2 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.25rem;
+  }
+  .choices {
+    display: grid; gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 40rem) { .choices { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 64rem) { .choices { grid-template-columns: repeat(4, 1fr); } }
+  .choice {
+    font: inherit; color: var(--ink); text-align: left; cursor: pointer;
+    background: var(--card);
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    display: grid; gap: 0.25rem;
+  }
+  .choice:hover { border-color: var(--slate); }
+  .choice[aria-selected="true"] { border-color: var(--broken); background: var(--broken-soft); }
+  .choice b {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.2rem; line-height: 1.25;
+  }
+  .choice span { color: var(--slate); font-size: 0.98rem; }
+
+  .panel {
+    margin-top: 1rem;
+    background: var(--card);
+    border: 2px solid var(--ink);
+    border-radius: 18px;
+    padding: 1.5rem 1.25rem;
+    display: grid; gap: 1.5rem;
+  }
+  @media (min-width: 48rem) {
+    .panel { grid-template-columns: 1fr 1fr; padding: 2rem; gap: 2.5rem; }
+  }
+  .panel[hidden] { display: none; }
+  .panel h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.15rem; margin: 0 0 0.6rem;
+  }
+  .panel ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+  .sym li { padding-left: 1.6rem; position: relative; }
+  .sym li::before {
+    content: ""; position: absolute; left: 0.2rem; top: 0.55em;
+    width: 0.7rem; height: 0.7rem; border-radius: 50%;
+    background: var(--broken);
+  }
+  .fix li { padding-left: 1.6rem; position: relative; }
+  .fix li::before {
+    content: ""; position: absolute; left: 0.15rem; top: 0.35em;
+    width: 0.45rem; height: 0.8rem;
+    border: solid var(--fixed); border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  .panel-foot {
+    grid-column: 1 / -1;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;
+    padding-top: 1.25rem; border-top: 1px solid var(--line);
+  }
+  .panel-foot p { margin: 0; color: var(--slate); flex: 1 1 18rem; }
+
+  /* Process */
+  .process { padding: 1rem 0 4rem; }
+  .steps {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 1.5rem;
+    counter-reset: step;
+  }
+  @media (min-width: 48rem) { .steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+  .steps li { counter-increment: step; border-top: 3px solid var(--ink); padding-top: 1rem; }
+  .steps li::before {
+    content: counter(step);
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800; font-size: 2.4rem; line-height: 1;
+    display: block; margin-bottom: 0.5rem;
+  }
+  .steps h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.2rem; margin: 0 0 0.35rem;
+  }
+  .steps p { margin: 0; color: var(--slate); max-width: 30rem; }
+
+  /* About */
+  .about {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--line);
+    display: grid; gap: 1.5rem;
+  }
+  @media (min-width: 48rem) { .about { grid-template-columns: 1fr 1.4fr; gap: 3rem; } }
+  .about p { margin: 0 0 1rem; max-width: 38rem; }
+  .about p:last-child { margin-bottom: 0; }
+
+  /* Closing */
+  .closing {
+    background: var(--ink); color: var(--paper);
+    border-radius: 22px;
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+  @media (min-width: 48rem) { .closing { padding: 3.5rem 3rem; } }
+  .closing h2 { color: var(--paper); margin-bottom: 0.75rem; }
+  .closing p { margin: 0 0 1.5rem; max-width: 36rem; opacity: 0.85; }
+  .closing .btn { background: var(--fixed); border-color: var(--fixed); color: #fff; }
+  .closing .btn:hover { background: transparent; color: var(--paper); border-color: var(--paper); }
+
+  footer {
+    padding: 0 0 2.5rem;
+    color: var(--slate); font-size: 0.95rem;
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .panel:not([hidden]) { animation: settle 0.28s ease-out; }
+    @keyframes settle { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="name" href="#">Eshban Bahadur</a>
+    <a class="btn btn-quiet" href="https://www.fiverr.com/users/eshban_bahadur/" rel="noopener">Hire me on Fiverr</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">
+        <span class="was">Broken.</span>
+        <span class="now">Fixed.</span>
+      </h1>
+      <p class="lede">
+        I'm a senior software engineer with <strong>20+ years</strong> of experience.
+        I fix hacked WordPress sites, WooCommerce problems, and apps built with
+        Lovable, Bolt or Replit that stopped working. I also build AI agents and
+        n8n automations that take repetitive work off your hands.
+      </p>
+    </section>
+
+    <section class="triage" aria-labelledby="triage-title">
+      <h2 id="triage-title">What do you need?</h2>
+
+      <div class="choices" role="tablist" aria-label="Choose your problem">
+        <button class="choice" role="tab" id="tab-hacked" aria-controls="panel-hacked" aria-selected="true">
+          <b>My WordPress site was hacked</b>
+          <span>Spam, redirects, malware, Google warnings</span>
+        </button>
+        <button class="choice" role="tab" id="tab-bug" aria-controls="panel-bug" aria-selected="false" tabindex="-1">
+          <b>My WordPress or WooCommerce site has a bug</b>
+          <span>Errors, broken checkout, white screen</span>
+        </button>
+        <button class="choice" role="tab" id="tab-app" aria-controls="panel-app" aria-selected="false" tabindex="-1">
+          <b>My Lovable, Bolt or Replit app won't work</b>
+          <span>Won't deploy, login fails, database errors</span>
+        </button>
+        <button class="choice" role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1">
+          <b>I want to automate my work with AI</b>
+          <span>AI agents, n8n workflows, chatbots</span>
+        </button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-hacked" aria-labelledby="tab-hacked">
+        <div>
+          <h3>Sound familiar?</h3>
+          <ul class="sym">
+            <li>Visitors get sent to spam or scam sites</li>
+            <li>Google or your browser says the site is dangerous</li>
+            <li>Strange posts, users or files you didn't create</li>
+            <li>You're locked out of your admin</li>
+            <li>Your host suspended the site for malware</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What I do</h3>
+          <ul class="fix">
+            <li>Find and remove the malware, including hidden backdoors</li>
+            <li>Find out how they got in and close that hole</li>
+            <li>Clean up spam users, posts and database injections</li>
+            <li>Reset passwords and harden the site</li>
+            <li>Help you get Google warnings removed</li>
+          </ul>
+        </div>
+        <div class="panel-foot">
+          <p>Hacked sites get worse the longer they stay infected. Send me a message and I'll tell you what I see.</p>
+          <a class="btn" href="https://www.fiverr.com/users/eshban_bahadur/" rel="noopener">Get my hacked site fixed</a>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-bug" aria-labelledby="tab-bug" hidden>
+        <div>
+          <h3>Sound familiar?</h3>
+          <ul class="sym">
+            <li>"There has been a critical error on this website"</li>
+            <li>Checkout or payments stopped working</li>
+            <li>A plugin or theme update broke something</li>
+            <li>Pages load blank, slow, or look broken</li>
+            <li>Emails, forms or orders aren't going through</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What I do</h3>
+          <ul class="fix">
+            <li>Find the real cause, not just the symptom</li>
+            <li>Fix plugin and theme conflicts safely</li>
+            <li>Repair WooCommerce checkout, cart and payment issues</li>
+            <li>Test the fix before handing it back</li>
+            <li>Explain what happened so it doesn't come back</li>
+          </ul>
+        </div>
+        <div class="panel-foot">
+          <p>Most WordPress bugs are fixed within 24 hours.</p>
+          <a class="btn" href="https://www.fiverr.com/users/eshban_bahadur/" rel="noopener">Get my bug fixed</a>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-app" aria-labelledby="tab-app" hidden>
+        <div>
+          <h3>Sound familiar?</h3>
+          <ul class="sym">
+            <li>It works in preview but fails when you deploy</li>
+            <li>Login or sign-up stopped working</li>
+            <li>Supabase or database errors you can't get past</li>
+            <li>The AI keeps "fixing" it and making it worse</li>
+            <li>You're burning credits going in circles</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What I do</h3>
+          <ul class="fix">
+            <li>Read your code and find what's actually broken</li>
+            <li>Fix deployment, environment and build errors</li>
+            <li>Repair login, database and API problems</li>
+            <li>Get the app live on your hosting</li>
+            <li>Tell you what to watch out for next time</li>
+          </ul>
+        </div>
+        <div class="panel-foot">
+          <p>AI tools are great at building, not always at fixing. That's where a human engineer helps.</p>
+          <a class="btn" href="https://www.fiverr.com/users/eshban_bahadur/" rel="noopener">Get my app working</a>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" hidden>
+        <div>
+          <h3>Sound familiar?</h3>
+          <ul class="sym">
+            <li>You copy and paste the same data between apps every day</li>
+            <li>Leads, emails or orders wait for someone to handle them</li>
+            <li>Customers ask the same questions again and again</li>
+            <li>You know AI could help but don't know where to start</li>
+            <li>An automation you set up keeps breaking</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What I do</h3>
+          <ul class="fix">
+            <li>Build n8n workflows that connect your apps and run on their own</li>
+            <li>Create AI agents that research, draft, sort and report for you</li>
+            <li>Connect AI to your tools and data using MCP</li>
+            <li>Add AI chat or assistants to your website or app</li>
+            <li>Keep a human approval step where it matters</li>
+          </ul>
+        </div>
+        <div class="panel-foot">
+          <p>Tell me which task eats your time. I'll suggest the simplest automation that removes it.</p>
+          <a class="btn" href="https://www.fiverr.com/users/eshban_bahadur/" rel="noopener">Automate my work</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" aria-labelledby="process-title">
+      <h2 id="process-title">How it works</h2>
+      <ol class="steps">
+        <li>
+          <h3>Message me on Fiverr</h3>
+          <p>Describe the problem and share your site or app link. No login details at this stage.</p>
+        </li>
+        <li>
+          <h3>Get a clear offer</h3>
+          <p>I look at the issue and send you an exact offer: what I'll fix, the price, and when it'll be done.</p>
+        </li>
+        <li>
+          <h3>It's fixed</h3>
+          <p>I fix it, test it, and explain what went wrong. Your payment is protected by Fiverr until you're happy.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Who you're working with</h2>
+      <div>
+        <p>
+          I've been building and fixing software for more than 20 years: websites,
+          online stores, web apps, mobile apps and backend systems. I'm based in
+          Lahore, Pakistan, and I handle every repair myself.
+        </p>
+        <p>
+          I'm an AI-native developer. I work with PHP, WordPress and WooCommerce,
+          JavaScript and Node.js, and Python, and I build with AI agents, MCP and n8n
+          every day. So I understand both the old WordPress site and the brand-new
+          app your AI tool generated, and I know where AI saves real time.
+        </p>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <h2 id="closing-title">Tell me what you need.</h2>
+      <p>Send a short message on Fiverr: what broke, or what you want automated. I'll reply with how I'd solve it.</p>
+      <a class="btn" href="https://www.fiverr.com/users/eshban_bahadur/" rel="noopener">Message me on Fiverr</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>Eshban Bahadur, Lahore, Pakistan</span>
+    <span>All orders and payments go through Fiverr for your protection.</span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { select(tab, false); });
+      tab.addEventListener('keydown', function (e) {
+        var next = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = tabs[(i + 1) % tabs.length];
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (e.key === 'Home') next = tabs[0];
+        if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); select(next, true); }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
