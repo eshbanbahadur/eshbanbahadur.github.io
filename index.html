@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eshban Bahadur | Fixes & AI Automation</title>
-<meta name="description" content="Hacked WordPress site, WooCommerce bug, a Lovable, Bolt or Replit app that won't work, or work you want to automate with AI? Senior software engineer with 20+ years of experience. Order safely through Fiverr.">
-<meta property="og:title" content="Eshban Bahadur | Fixes & AI Automation">
-<meta property="og:description" content="I fix hacked WordPress sites, WooCommerce bugs and broken Lovable, Bolt and Replit apps, and build AI agents and n8n automations.">
+<title>Eshban Bahadur | Fixes, AI Automation & WordPress Plugins</title>
+<meta name="description" content="I fix hacked WordPress sites, WooCommerce bugs and broken Lovable, Bolt or Replit apps, build AI automations, and make OpenAisle and Waitlytics, two free WooCommerce plugins on WordPress.org.">
+<meta property="og:title" content="Eshban Bahadur | Fixes, AI Automation & WordPress Plugins">
+<meta property="og:description" content="I fix hacked WordPress sites, WooCommerce bugs and broken Lovable, Bolt and Replit apps, build AI agents and n8n automations, and make OpenAisle and Waitlytics, two free WooCommerce plugins.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -197,6 +197,47 @@
     font-size: 1.2rem; margin: 0 0 0.35rem;
   }
   .steps p { margin: 0; color: var(--slate); max-width: 30rem; }
+
+  /* Plugins */
+  .plugins {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--line);
+  }
+  .plugins-intro { margin: 0 0 1.5rem; color: var(--slate); max-width: 38rem; }
+  .plugin-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 48rem) { .plugin-list { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+  .plugin {
+    background: var(--card);
+    border: 2px solid var(--line);
+    border-radius: 18px;
+    padding: 1.5rem 1.25rem;
+    display: flex; flex-direction: column; gap: 0.75rem;
+  }
+  @media (min-width: 48rem) { .plugin { padding: 2rem; } }
+  .plugin h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.25rem; line-height: 1.25; margin: 0;
+  }
+  .plugin p { margin: 0; color: var(--slate); }
+  .plugin-actions {
+    margin-top: auto; padding-top: 0.75rem;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem;
+  }
+  .text-link {
+    display: inline-flex; align-items: center; min-height: 2.75rem;
+    font-weight: 700; color: var(--ink);
+    text-decoration: underline; text-underline-offset: 0.2em;
+  }
+  .text-link:hover { color: var(--fixed); }
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
 
   /* About */
   .about {
@@ -419,6 +460,28 @@
           app your AI tool generated, and I know where AI saves real time.
         </p>
       </div>
+    </section>
+
+    <section class="plugins" id="plugins" aria-labelledby="plugins-title">
+      <h2 id="plugins-title">My WordPress Plugins</h2>
+      <p class="plugins-intro">Free plugins I build and maintain for WooCommerce stores, both on WordPress.org.</p>
+      <ul class="plugin-list">
+        <li class="plugin">
+          <h3>OpenAisle &ndash; Accessibility Scanner &amp; EAA Compliance for WooCommerce</h3>
+          <p>Scans your shop, product, cart, checkout and My Account pages for WCAG issues on your own server using axe-core. Get a 0&ndash;100 score, a prioritised fix list, and an audit trail for the European Accessibility Act. Nothing leaves your server.</p>
+          <div class="plugin-actions">
+            <a class="btn" href="https://wordpress.org/plugins/openaisle/" target="_blank" rel="noopener">Get it free on WordPress.org<span class="visually-hidden"> (OpenAisle, opens in a new tab)</span></a>
+          </div>
+        </li>
+        <li class="plugin">
+          <h3>Waitlytics &ndash; Back in Stock Notifier &amp; Waitlist for WooCommerce</h3>
+          <p>Adds a "Notify Me" form to out-of-stock products and emails customers automatically when you restock, so sold-out pages stop losing sales.</p>
+          <div class="plugin-actions">
+            <a class="btn" href="https://wordpress.org/plugins/waitlytics/" target="_blank" rel="noopener">Get it free on WordPress.org<span class="visually-hidden"> (Waitlytics, opens in a new tab)</span></a>
+            <a class="text-link" href="https://dev.to/eshban_bahadur_1705512458/how-to-add-back-in-stock-notifications-to-woocommerce-since-it-doesnt-have-them-built-in-16mk" target="_blank" rel="noopener">Read the setup guide<span class="visually-hidden"> (Waitlytics, opens in a new tab)</span></a>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section class="closing" aria-labelledby="closing-title">
